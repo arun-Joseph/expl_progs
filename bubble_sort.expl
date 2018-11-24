@@ -1,0 +1,39 @@
+decl
+  int a[50], n;
+enddecl
+int main()
+{
+decl
+  int temp, i, j;
+enddecl
+begin
+  read(n);
+  i = 0;
+  while(i < n) do
+    read(a[i]);
+    i = i + 1;
+  endwhile;
+
+  i = 0;
+  while(i < n) do
+    j = 0;
+    while(j < (n - i - 1)) do
+      if(a[j] > a[j + 1]) then
+        temp = a[j];
+        a[j] = a[j + 1];
+        a[j + 1] = temp;
+      endif;
+      j = j + 1;
+    endwhile;
+    i = i + 1;
+  endwhile;
+
+  i = 0;
+  while(i < n) do
+    write(a[i]);
+    i = i + 1;
+  endwhile;
+
+  return 0;
+end
+}
